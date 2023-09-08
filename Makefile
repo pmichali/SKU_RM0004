@@ -1,4 +1,4 @@
-TATGET := display
+TATGET := oled_display
 CC     := gcc
 
 OBJ := obj
@@ -21,6 +21,11 @@ VPATH := $(SRCDIRS)
 
 $(TATGET):$(OBJS)
 	$(CC) -o $@ $^
+
+.PHONY: install
+install: $(TATGET)
+	/usr/bin/install -m 755 $(TATGET) /usr/local/bin/
+
 $(OBJS) : obj/%.o : %.c
 	$(CC) -c $(INCLUDE) -o $@ $<
 
