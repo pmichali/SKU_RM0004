@@ -3,7 +3,7 @@
 # Path and name of the new file.
 file_path="/etc/systemd/system/"
 service_name="uctronics-display.service"
-exe_path=$(pwd)/"display"
+exe_path=$(pwd)/"oled_display"
 
 deploy_function_service() {
     echo Create a new service "$file_path""$service_name".
